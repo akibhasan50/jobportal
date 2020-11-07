@@ -8,7 +8,17 @@ class EmailController extends Controller
 {
     public function mail(Request $request)
     {
-        Mail::to($request->user())->send(new MailableClass);
+       $jobId = $request->get('job_id');
+
+       $data = array(
+           'your_name' => $request->get('your_name'), 
+           'your_email' => $request->get('your_email'), 
+           'friend_name' => $request->get('friend_name'), 
+           'friend_email' => $request->get('friend_email'), 
+          
+        );
+
+        return $data;
 
     }
 }

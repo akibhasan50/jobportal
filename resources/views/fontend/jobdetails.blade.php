@@ -161,28 +161,29 @@
 					<hr>
 					<form  action="{{route('send.mail')}}" method="post">
 					@csrf
+					<input type="hidden" class="form-control" name="job_id" value="{{$job->id}}" placeholder="">
 						<div class="form-group">
 						<label for="">Your Name</label>
-						<input type="text" class="form-control" name="" id="" placeholder="">
+						<input type="text" class="form-control" name="your_name" id="" placeholder="">
 						
 						</div>
 						<div class="form-group">
 						<label for="">Your Email</label>
-						<input type="email" class="form-control" name="" id="" placeholder="">
+						<input type="email" class="form-control" name="" id="your_email" placeholder="">
 						
 						</div>
 						<div class="form-group">
 						<label for="">Friend Name</label>
-						<input type="text" class="form-control" name="" id="" placeholder="">
+						<input type="text" class="form-control" name="friend_name" id="" placeholder="">
 						
 						</div>
 						<div class="form-group">
 						<label for="">Friend Email</label>
-						<input type="email" class="form-control" name="" id="" placeholder="">
+						<input type="email" class="form-control" name="friend_email" id="" placeholder="">
 						
 						</div>
 						
-						<button type="submit" class="btn btn-primary">send mail</button>
+						<button type="submit" class="btn btn-primary" style="margin-top:14px;">send mail</button>
 			
 					</form>
 				
