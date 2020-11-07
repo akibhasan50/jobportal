@@ -169,7 +169,7 @@
 						</div>
 						<div class="form-group">
 						<label for="">Your Email</label>
-						<input type="email" class="form-control" name="" id="your_email" placeholder="">
+						<input type="email" class="form-control"  name="your_email" placeholder="">
 						
 						</div>
 						<div class="form-group">
