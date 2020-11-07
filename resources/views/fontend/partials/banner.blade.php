@@ -4,12 +4,13 @@
 
                     <div class="search-container">
 
-                        <!-- Form -->
+                       <form action="{{route('search')}}" method="post" >
+                         @csrf
                         <h2>Find job</h2>
-                        <input type="text" class="ico-01" placeholder="job title, keywords or company name" value="" />
-                        <input type="text" class="ico-02" placeholder="city, province or region" value="" />
+                        <input type="text" class="ico-01" placeholder="job title, keywords or company name" name="search1" />
+                       
                         <button><i class="fa fa-search"></i></button>
-
+                        	</form>
                         <!-- Browse Jobs -->
                         <div class="browse-jobs">
                             Browse job offers by <a href="browse-categories.html"> category</a> or <a href="#">location</a>

@@ -20,6 +20,7 @@ Route::view('/all-jobs','fontend.alljobs')->name('job.all');
 Route::view('/all-category','fontend.allcategory')->name('category.all');
 Route::get('/jobs-by-category/{id}','App\Http\Controllers\JobController@jobByCategory')->name('job.cat');
 Route::post('/jobs-search-result','App\Http\Controllers\JobController@jobSearch')->name('job.search');
+Route::post('/jobs-search-result','App\Http\Controllers\JobController@search')->name('search');
 
 //candidates info
 Route::get('/login-reg','App\Http\Controllers\AuthController@loginReg')->name('auth.index');

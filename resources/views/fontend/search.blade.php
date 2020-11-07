@@ -26,7 +26,25 @@
                     <a href="{{route('jobs.show',$job->id)}}">
                         <img src="{{$job->company->logo}}" alt="">
                         <div class="job-list-content"> 
-                            <h4>{{$job->title}} <span class="full-time">{{$job->type}}</span></h4>
+                            <h4>{{$job->title}} <span
+                                    
+                                    @switch($job->type)
+                                        @case('Full-Time')
+                                            class="full-time"
+                                            @break
+                                        @case('Part-Time')
+                                            class="part-time"
+                                            @break
+                                        @case('Internship')
+                                            class="internship"
+                                            @break
+                                        @default
+                                           class="full-time" 
+                                    @endswitch
+                                     
+                                     
+                                     
+                                     >{{$job->type}}</span></h4>
                             <div class="job-icons">
                                 <span><i class="fa fa-briefcase"></i> {{$job->company->cname}}</span>
                                 <span><i class="fa fa-map-marker"></i> {{$job->address}}</span>

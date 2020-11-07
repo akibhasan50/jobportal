@@ -7,7 +7,25 @@
 	<div class="container">
 		<div class="ten columns">
 			<span><a href="browse-jobs.html">Home / Job Details</a></span>
-			<h2>{{$job->title}} <span class="full-time">{{$job->type}}</span></h2>
+			<h2>{{$job->title}} <span
+					
+					@switch($job->type)
+						@case('Full-Time')
+							class="full-time"
+							@break
+						@case('Part-Time')
+							class="part-time"
+							@break
+						@case('Internship')
+							class="internship"
+							@break
+						@default
+							class="full-time" 
+					@endswitch
+						
+						
+						
+						>{{$job->type}}</span></h2>
 			
 		</div>
 

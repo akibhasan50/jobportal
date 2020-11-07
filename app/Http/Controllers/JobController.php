@@ -187,11 +187,33 @@ class JobController extends Controller
     public function jobSearch(Request $request)
     {
         $search = $request->search;
-        $jobs = Job::with('company')->where('title','LIKE',"%$search%")
-        ->where('description','LIKE',"%$search%")
+        $jobs = Job::join('companies','jobs.company_id','companies.id')
+        ->where('title','LIKE',"%$search%")
+        ->orWhere('cname','LIKE',"%$search%")
+        ->orWhere('roles','LIKE',"%$search%")
+        ->orWhere('position','LIKE',"%$search%")
         ->get();
 
         return view('fontend.search',compact('jobs'));
         
+    }
+
+    public function search(Request $request)
+    {
+        $search1 = $request->search1;
+     
+
+      
+        
+        $jobs =Job::join('companies','jobs.company_id','companies.id')
+        ->where('title','LIKE',"%$search1%")
+        ->orWhere('cname','LIKE',"%$search1%")
+        ->orWhere('roles','LIKE',"%$search1%")
+        ->orWhere('position','LIKE',"%$search1%")
+    
+        ->get();
+
+    
+        return view('fontend.search',compact('jobs'));
     }
 }
